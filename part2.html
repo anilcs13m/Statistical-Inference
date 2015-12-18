@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+<title>Analysis of supplements in tooth growth</title>
+
+<script type="text/javascript">
+window.onload = function() {
+  var imgs = document.getElementsByTagName('img'), i, img;
+  for (i = 0; i < imgs.length; i++) {
+    img = imgs[i];
+    // center an image if it is the only element of its parent
+    if (img.parentElement.childElementCount === 1)
+      img.parentElement.style.textAlign = 'center';
+  }
+};
+</script>
+
+<!-- Styles for R syntax highlighter -->
+<style type="text/css">
+   pre .operator,
+   pre .paren {
+     color: rgb(104, 118, 135)
+   }
+
+   pre .literal {
+     color: #990073
+   }
+
+   pre .number {
+     color: #099;
+   }
+
+   pre .comment {
+     color: #998;
+     font-style: italic
+   }
+
+   pre .keyword {
+     color: #900;
+     font-weight: bold
+   }
+
+   pre .identifier {
+     color: rgb(0, 0, 0);
+   }
+
+   pre .string {
+     color: #d14;
+   }
+</style>
+
+<!-- R syntax highlighter -->
+<script type="text/javascript">
+var hljs=new function(){function m(p){return p.replace(/&/gm,"&amp;").replace(/</gm,"&lt;")}function f(r,q,p){return RegExp(q,"m"+(r.cI?"i":"")+(p?"g":""))}function b(r){for(var p=0;p<r.childNodes.length;p++){var q=r.childNodes[p];if(q.nodeName=="CODE"){return q}if(!(q.nodeType==3&&q.nodeValue.match(/\s+/))){break}}}function h(t,s){var p="";for(var r=0;r<t.childNodes.length;r++){if(t.childNodes[r].nodeType==3){var q=t.childNodes[r].nodeValue;if(s){q=q.replace(/\n/g,"")}p+=q}else{if(t.childNodes[r].nodeName=="BR"){p+="\n"}else{p+=h(t.childNodes[r])}}}if(/MSIE [678]/.test(navigator.userAgent)){p=p.replace(/\r/g,"\n")}return p}function a(s){var r=s.className.split(/\s+/);r=r.concat(s.parentNode.className.split(/\s+/));for(var q=0;q<r.length;q++){var p=r[q].replace(/^language-/,"");if(e[p]){return p}}}function c(q){var p=[];(function(s,t){for(var r=0;r<s.childNodes.length;r++){if(s.childNodes[r].nodeType==3){t+=s.childNodes[r].nodeValue.length}else{if(s.childNodes[r].nodeName=="BR"){t+=1}else{if(s.childNodes[r].nodeType==1){p.push({event:"start",offset:t,node:s.childNodes[r]});t=arguments.callee(s.childNodes[r],t);p.push({event:"stop",offset:t,node:s.childNodes[r]})}}}}return t})(q,0);return p}function k(y,w,x){var q=0;var z="";var s=[];function u(){if(y.length&&w.length){if(y[0].offset!=w[0].offset){return(y[0].offset<w[0].offset)?y:w}else{return w[0].event=="start"?y:w}}else{return y.length?y:w}}function t(D){var A="<"+D.nodeName.toLowerCase();for(var B=0;B<D.attributes.length;B++){var C=D.attributes[B];A+=" "+C.nodeName.toLowerCase();if(C.value!==undefined&&C.value!==false&&C.value!==null){A+='="'+m(C.value)+'"'}}return A+">"}while(y.length||w.length){var v=u().splice(0,1)[0];z+=m(x.substr(q,v.offset-q));q=v.offset;if(v.event=="start"){z+=t(v.node);s.push(v.node)}else{if(v.event=="stop"){var p,r=s.length;do{r--;p=s[r];z+=("</"+p.nodeName.toLowerCase()+">")}while(p!=v.node);s.splice(r,1);while(r<s.length){z+=t(s[r]);r++}}}}return z+m(x.substr(q))}function j(){function q(x,y,v){if(x.compiled){return}var u;var s=[];if(x.k){x.lR=f(y,x.l||hljs.IR,true);for(var w in x.k){if(!x.k.hasOwnProperty(w)){continue}if(x.k[w] instanceof Object){u=x.k[w]}else{u=x.k;w="keyword"}for(var r in u){if(!u.hasOwnProperty(r)){continue}x.k[r]=[w,u[r]];s.push(r)}}}if(!v){if(x.bWK){x.b="\\b("+s.join("|")+")\\s"}x.bR=f(y,x.b?x.b:"\\B|\\b");if(!x.e&&!x.eW){x.e="\\B|\\b"}if(x.e){x.eR=f(y,x.e)}}if(x.i){x.iR=f(y,x.i)}if(x.r===undefined){x.r=1}if(!x.c){x.c=[]}x.compiled=true;for(var t=0;t<x.c.length;t++){if(x.c[t]=="self"){x.c[t]=x}q(x.c[t],y,false)}if(x.starts){q(x.starts,y,false)}}for(var p in e){if(!e.hasOwnProperty(p)){continue}q(e[p].dM,e[p],true)}}function d(B,C){if(!j.called){j();j.called=true}function q(r,M){for(var L=0;L<M.c.length;L++){if((M.c[L].bR.exec(r)||[null])[0]==r){return M.c[L]}}}function v(L,r){if(D[L].e&&D[L].eR.test(r)){return 1}if(D[L].eW){var M=v(L-1,r);return M?M+1:0}return 0}function w(r,L){return L.i&&L.iR.test(r)}function K(N,O){var M=[];for(var L=0;L<N.c.length;L++){M.push(N.c[L].b)}var r=D.length-1;do{if(D[r].e){M.push(D[r].e)}r--}while(D[r+1].eW);if(N.i){M.push(N.i)}return f(O,M.join("|"),true)}function p(M,L){var N=D[D.length-1];if(!N.t){N.t=K(N,E)}N.t.lastIndex=L;var r=N.t.exec(M);return r?[M.substr(L,r.index-L),r[0],false]:[M.substr(L),"",true]}function z(N,r){var L=E.cI?r[0].toLowerCase():r[0];var M=N.k[L];if(M&&M instanceof Array){return M}return false}function F(L,P){L=m(L);if(!P.k){return L}var r="";var O=0;P.lR.lastIndex=0;var M=P.lR.exec(L);while(M){r+=L.substr(O,M.index-O);var N=z(P,M);if(N){x+=N[1];r+='<span class="'+N[0]+'">'+M[0]+"</span>"}else{r+=M[0]}O=P.lR.lastIndex;M=P.lR.exec(L)}return r+L.substr(O,L.length-O)}function J(L,M){if(M.sL&&e[M.sL]){var r=d(M.sL,L);x+=r.keyword_count;return r.value}else{return F(L,M)}}function I(M,r){var L=M.cN?'<span class="'+M.cN+'">':"";if(M.rB){y+=L;M.buffer=""}else{if(M.eB){y+=m(r)+L;M.buffer=""}else{y+=L;M.buffer=r}}D.push(M);A+=M.r}function G(N,M,Q){var R=D[D.length-1];if(Q){y+=J(R.buffer+N,R);return false}var P=q(M,R);if(P){y+=J(R.buffer+N,R);I(P,M);return P.rB}var L=v(D.length-1,M);if(L){var O=R.cN?"</span>":"";if(R.rE){y+=J(R.buffer+N,R)+O}else{if(R.eE){y+=J(R.buffer+N,R)+O+m(M)}else{y+=J(R.buffer+N+M,R)+O}}while(L>1){O=D[D.length-2].cN?"</span>":"";y+=O;L--;D.length--}var r=D[D.length-1];D.length--;D[D.length-1].buffer="";if(r.starts){I(r.starts,"")}return R.rE}if(w(M,R)){throw"Illegal"}}var E=e[B];var D=[E.dM];var A=0;var x=0;var y="";try{var s,u=0;E.dM.buffer="";do{s=p(C,u);var t=G(s[0],s[1],s[2]);u+=s[0].length;if(!t){u+=s[1].length}}while(!s[2]);if(D.length>1){throw"Illegal"}return{r:A,keyword_count:x,value:y}}catch(H){if(H=="Illegal"){return{r:0,keyword_count:0,value:m(C)}}else{throw H}}}function g(t){var p={keyword_count:0,r:0,value:m(t)};var r=p;for(var q in e){if(!e.hasOwnProperty(q)){continue}var s=d(q,t);s.language=q;if(s.keyword_count+s.r>r.keyword_count+r.r){r=s}if(s.keyword_count+s.r>p.keyword_count+p.r){r=p;p=s}}if(r.language){p.second_best=r}return p}function i(r,q,p){if(q){r=r.replace(/^((<[^>]+>|\t)+)/gm,function(t,w,v,u){return w.replace(/\t/g,q)})}if(p){r=r.replace(/\n/g,"<br>")}return r}function n(t,w,r){var x=h(t,r);var v=a(t);var y,s;if(v){y=d(v,x)}else{return}var q=c(t);if(q.length){s=document.createElement("pre");s.innerHTML=y.value;y.value=k(q,c(s),x)}y.value=i(y.value,w,r);var u=t.className;if(!u.match("(\\s|^)(language-)?"+v+"(\\s|$)")){u=u?(u+" "+v):v}if(/MSIE [678]/.test(navigator.userAgent)&&t.tagName=="CODE"&&t.parentNode.tagName=="PRE"){s=t.parentNode;var p=document.createElement("div");p.innerHTML="<pre><code>"+y.value+"</code></pre>";t=p.firstChild.firstChild;p.firstChild.cN=s.cN;s.parentNode.replaceChild(p.firstChild,s)}else{t.innerHTML=y.value}t.className=u;t.result={language:v,kw:y.keyword_count,re:y.r};if(y.second_best){t.second_best={language:y.second_best.language,kw:y.second_best.keyword_count,re:y.second_best.r}}}function o(){if(o.called){return}o.called=true;var r=document.getElementsByTagName("pre");for(var p=0;p<r.length;p++){var q=b(r[p]);if(q){n(q,hljs.tabReplace)}}}function l(){if(window.addEventListener){window.addEventListener("DOMContentLoaded",o,false);window.addEventListener("load",o,false)}else{if(window.attachEvent){window.attachEvent("onload",o)}else{window.onload=o}}}var e={};this.LANGUAGES=e;this.highlight=d;this.highlightAuto=g;this.fixMarkup=i;this.highlightBlock=n;this.initHighlighting=o;this.initHighlightingOnLoad=l;this.IR="[a-zA-Z][a-zA-Z0-9_]*";this.UIR="[a-zA-Z_][a-zA-Z0-9_]*";this.NR="\\b\\d+(\\.\\d+)?";this.CNR="\\b(0[xX][a-fA-F0-9]+|(\\d+(\\.\\d*)?|\\.\\d+)([eE][-+]?\\d+)?)";this.BNR="\\b(0b[01]+)";this.RSR="!|!=|!==|%|%=|&|&&|&=|\\*|\\*=|\\+|\\+=|,|\\.|-|-=|/|/=|:|;|<|<<|<<=|<=|=|==|===|>|>=|>>|>>=|>>>|>>>=|\\?|\\[|\\{|\\(|\\^|\\^=|\\||\\|=|\\|\\||~";this.ER="(?![\\s\\S])";this.BE={b:"\\\\.",r:0};this.ASM={cN:"string",b:"'",e:"'",i:"\\n",c:[this.BE],r:0};this.QSM={cN:"string",b:'"',e:'"',i:"\\n",c:[this.BE],r:0};this.CLCM={cN:"comment",b:"//",e:"$"};this.CBLCLM={cN:"comment",b:"/\\*",e:"\\*/"};this.HCM={cN:"comment",b:"#",e:"$"};this.NM={cN:"number",b:this.NR,r:0};this.CNM={cN:"number",b:this.CNR,r:0};this.BNM={cN:"number",b:this.BNR,r:0};this.inherit=function(r,s){var p={};for(var q in r){p[q]=r[q]}if(s){for(var q in s){p[q]=s[q]}}return p}}();hljs.LANGUAGES.cpp=function(){var a={keyword:{"false":1,"int":1,"float":1,"while":1,"private":1,"char":1,"catch":1,"export":1,virtual:1,operator:2,sizeof:2,dynamic_cast:2,typedef:2,const_cast:2,"const":1,struct:1,"for":1,static_cast:2,union:1,namespace:1,unsigned:1,"long":1,"throw":1,"volatile":2,"static":1,"protected":1,bool:1,template:1,mutable:1,"if":1,"public":1,friend:2,"do":1,"return":1,"goto":1,auto:1,"void":2,"enum":1,"else":1,"break":1,"new":1,extern:1,using:1,"true":1,"class":1,asm:1,"case":1,typeid:1,"short":1,reinterpret_cast:2,"default":1,"double":1,register:1,explicit:1,signed:1,typename:1,"try":1,"this":1,"switch":1,"continue":1,wchar_t:1,inline:1,"delete":1,alignof:1,char16_t:1,char32_t:1,constexpr:1,decltype:1,noexcept:1,nullptr:1,static_assert:1,thread_local:1,restrict:1,_Bool:1,complex:1},built_in:{std:1,string:1,cin:1,cout:1,cerr:1,clog:1,stringstream:1,istringstream:1,ostringstream:1,auto_ptr:1,deque:1,list:1,queue:1,stack:1,vector:1,map:1,set:1,bitset:1,multiset:1,multimap:1,unordered_set:1,unordered_map:1,unordered_multiset:1,unordered_multimap:1,array:1,shared_ptr:1}};return{dM:{k:a,i:"</",c:[hljs.CLCM,hljs.CBLCLM,hljs.QSM,{cN:"string",b:"'\\\\?.",e:"'",i:"."},{cN:"number",b:"\\b(\\d+(\\.\\d*)?|\\.\\d+)(u|U|l|L|ul|UL|f|F)"},hljs.CNM,{cN:"preprocessor",b:"#",e:"$"},{cN:"stl_container",b:"\\b(deque|list|queue|stack|vector|map|set|bitset|multiset|multimap|unordered_map|unordered_set|unordered_multiset|unordered_multimap|array)\\s*<",e:">",k:a,r:10,c:["self"]}]}}}();hljs.LANGUAGES.r={dM:{c:[hljs.HCM,{cN:"number",b:"\\b0[xX][0-9a-fA-F]+[Li]?\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"number",b:"\\b\\d+(?:[eE][+\\-]?\\d*)?L\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"number",b:"\\b\\d+\\.(?!\\d)(?:i\\b)?",e:hljs.IMMEDIATE_RE,r:1},{cN:"number",b:"\\b\\d+(?:\\.\\d*)?(?:[eE][+\\-]?\\d*)?i?\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"number",b:"\\.\\d+(?:[eE][+\\-]?\\d*)?i?\\b",e:hljs.IMMEDIATE_RE,r:1},{cN:"keyword",b:"(?:tryCatch|library|setGeneric|setGroupGeneric)\\b",e:hljs.IMMEDIATE_RE,r:10},{cN:"keyword",b:"\\.\\.\\.",e:hljs.IMMEDIATE_RE,r:10},{cN:"keyword",b:"\\.\\.\\d+(?![\\w.])",e:hljs.IMMEDIATE_RE,r:10},{cN:"keyword",b:"\\b(?:function)",e:hljs.IMMEDIATE_RE,r:2},{cN:"keyword",b:"(?:if|in|break|next|repeat|else|for|return|switch|while|try|stop|warning|require|attach|detach|source|setMethod|setClass)\\b",e:hljs.IMMEDIATE_RE,r:1},{cN:"literal",b:"(?:NA|NA_integer_|NA_real_|NA_character_|NA_complex_)\\b",e:hljs.IMMEDIATE_RE,r:10},{cN:"literal",b:"(?:NULL|TRUE|FALSE|T|F|Inf|NaN)\\b",e:hljs.IMMEDIATE_RE,r:1},{cN:"identifier",b:"[a-zA-Z.][a-zA-Z0-9._]*\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"operator",b:"<\\-(?!\\s*\\d)",e:hljs.IMMEDIATE_RE,r:2},{cN:"operator",b:"\\->|<\\-",e:hljs.IMMEDIATE_RE,r:1},{cN:"operator",b:"%%|~",e:hljs.IMMEDIATE_RE},{cN:"operator",b:">=|<=|==|!=|\\|\\||&&|=|\\+|\\-|\\*|/|\\^|>|<|!|&|\\||\\$|:",e:hljs.IMMEDIATE_RE,r:0},{cN:"operator",b:"%",e:"%",i:"\\n",r:1},{cN:"identifier",b:"`",e:"`",r:0},{cN:"string",b:'"',e:'"',c:[hljs.BE],r:0},{cN:"string",b:"'",e:"'",c:[hljs.BE],r:0},{cN:"paren",b:"[[({\\])}]",e:hljs.IMMEDIATE_RE,r:0}]}};
+hljs.initHighlightingOnLoad();
+</script>
+
+<!-- MathJax scripts -->
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<style type="text/css">
+body, td {
+   font-family: sans-serif;
+   background-color: white;
+   font-size: 13px;
+}
+
+body {
+  max-width: 800px;
+  margin: auto;
+  padding: 1em;
+  line-height: 20px;
+}
+
+tt, code, pre {
+   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+}
+
+h1 {
+   font-size:2.2em;
+}
+
+h2 {
+   font-size:1.8em;
+}
+
+h3 {
+   font-size:1.4em;
+}
+
+h4 {
+   font-size:1.0em;
+}
+
+h5 {
+   font-size:0.9em;
+}
+
+h6 {
+   font-size:0.8em;
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre, img {
+  max-width: 100%;
+}
+pre {
+  overflow-x: auto;
+}
+pre code {
+   display: block; padding: 0.5em;
+}
+
+code {
+  font-size: 92%;
+  border: 1px solid #ccc;
+}
+
+code[class] {
+  background-color: #F8F8F8;
+}
+
+table, td, th {
+  border: none;
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+   border-top-style: dotted;
+   border-top-color: #999999;
+}
+
+@media print {
+   * {
+      background: transparent !important;
+      color: black !important;
+      filter:none !important;
+      -ms-filter: none !important;
+   }
+
+   body {
+      font-size:12pt;
+      max-width:100%;
+   }
+
+   a, a:visited {
+      text-decoration: underline;
+   }
+
+   hr {
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote {
+      padding-right: 1em;
+      page-break-inside: avoid;
+   }
+
+   tr, img {
+      page-break-inside: avoid;
+   }
+
+   img {
+      max-width: 100% !important;
+   }
+
+   @page :left {
+      margin: 15mm 20mm 15mm 10mm;
+   }
+
+   @page :right {
+      margin: 15mm 10mm 15mm 20mm;
+   }
+
+   p, h2, h3 {
+      orphans: 3; widows: 3;
+   }
+
+   h2, h3 {
+      page-break-after: avoid;
+   }
+}
+</style>
+
+
+
+</head>
+
+<body>
+<h1>Analysis of supplements in tooth growth</h1>
+
+<p>Now in the second portion of the class, we&#39;re going to analyze the ToothGrowth data in the R datasets package</p>
+
+<h2>Introduction</h2>
+
+<p>The response is the length of teeth in each of 10 guinea pigs at each of three dose levels of Vitamin C (0.5, 1, and 2 mg) with each of two delivery methods (orange juice or ascorbic acid).</p>
+
+<h2>Data exploration</h2>
+
+<pre><code class="r">par(mfrow = c(1,2))
+p1 &lt;- ggplot(ToothGrowth, aes(x = factor(dose), y = len, fill = factor(dose))) 
+p1 + geom_boxplot() + guides(fill=FALSE) + facet_grid(. ~ supp)
+</code></pre>
+
+<p><img src="data:image/png;base64,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" alt="plot of chunk unnamed-chunk-2"/> </p>
+
+<p>After plotting the data as boxplots a number of correlations were observed. The length of the tooth increases as the dosage increases. The OJ delivery method yields a greater length than the VC (approximately 10mm) for smaller dosages but the difference is negligable by a 2mg dosage.</p>
+
+<h1>Statistical inference</h1>
+
+<p>The tooth growth was compared by supplement for each dosage under the null hypothesis that each supplement has the same effect at a certain dosage on the tooth.</p>
+
+<p>\(H_0: \mu_{OJ|0.5} = \mu_{VC_|0.5}\)<br/>
+\(H_0: \mu_{OJ|1.0} = \mu_{VC_|1.0}\)<br/>
+\(H_0: \mu_{OJ|2.0} = \mu_{VC_|2.0}\) </p>
+
+<pre><code class="r"># split the data up by dosages
+d0.5 &lt;- subset(ToothGrowth, dose == 0.5)
+d1.0 &lt;- subset(ToothGrowth, dose == 1.0)
+d2.0 &lt;- subset(ToothGrowth, dose == 2.0)
+
+# conduct a t-test between supplements
+test0.5 &lt;- t.test(len ~ supp, paired = FALSE, var.equal = FALSE, data = d0.5)
+test0.5$p.value; test0.5$conf[1]
+</code></pre>
+
+<pre><code>## [1] 0.006358607
+</code></pre>
+
+<pre><code>## [1] 1.719057
+</code></pre>
+
+<pre><code class="r">test1.0 &lt;- t.test(len ~ supp, paired = FALSE, var.equal = FALSE, data = d1.0)
+test1.0$p.value; test1.0$conf[1]
+</code></pre>
+
+<pre><code>## [1] 0.001038376
+</code></pre>
+
+<pre><code>## [1] 2.802148
+</code></pre>
+
+<p>Dosages 1.0 and 1.5 have significant p-values of 0.006359 and 0.001038 respectively indicating that the difference in mean values between the supplements is significant. Dosage 1.0 has a confidence interval of 1.719-8.781 and dosage 2.0 has a confidence interval of 2.802-9.058. </p>
+
+<pre><code class="r">test2.0 &lt;- t.test(len ~ supp, paired = FALSE, var.equal = FALSE, data = d2.0)
+test2.0$p.value; test2.0$conf[1]
+</code></pre>
+
+<pre><code>## [1] 0.9638516
+</code></pre>
+
+<pre><code>## [1] -3.79807
+</code></pre>
+
+<p>Dosage 3.0 has a very high p-value of 0.9639 and a confidence interval below zero -3.798-3.638. This indicates that there is no significance between the 
+supplements at this dosage. This is also intuitive from the earlier boxplot.</p>
+
+<h2>Conclusions</h2>
+
+<p>The supplements orange juice and ascorbic acid have different effects on tooth length for lower dosages of vitamin C according to the t-test. Orange juice yields a longer tooth for dosages of 0.5 and 1.0mg. However at a dosage of 3.0mg there is no change in tooth length.</p>
+
+<h2>Assumptions</h2>
+
+<ul>
+<li>The supplements have a treatment effect and there are no other fconfounding factors.</li>
+<li>Samples are unpaired, with unequal variances.</li>
+<li>Guinea pigs are essentially identical - size, diet etc.</li>
+</ul>
+
+</body>
+
+</html>

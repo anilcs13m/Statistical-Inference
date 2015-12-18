@@ -1,2 +1,2 @@
 # Statistical-Inference
-This is a repository for all the programs related to the Statistical Inference part data science specialization
+This is a repository for any and all code written for the Statistical Inference Coursera course through Johns Hopkins University.
